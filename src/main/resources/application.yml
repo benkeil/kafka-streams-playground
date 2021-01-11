@@ -13,13 +13,17 @@ spring.cloud.stream:
             applicationId: ${spring.application.name}.uppercase
   bindings:
     reverse-in-0:
+      group: ${spring.application.name}
       destination: strings
     reverse-out-0:
+      group: ${spring.application.name}
       destination: strings-reverse
 
     uppercase-in-0:
+      group: ${spring.application.name}
       destination: strings-reverse
     uppercase-out-0:
+      group: ${spring.application.name}
       destination: strings-processed
 
 server:
