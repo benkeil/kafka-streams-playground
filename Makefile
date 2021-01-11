@@ -18,5 +18,5 @@ consumer:
 
 producer:
 	kafka-console-producer --bootstrap-server localhost:9092 \
-		--property value.serializer=org.apache.kafka.common.serialization.ByteArraySerializer \
+		--property value.serializer=org.apache.kafka.common.serialization.StringSerializer \
  		--topic strings

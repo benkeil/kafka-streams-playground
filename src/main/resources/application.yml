@@ -3,12 +3,24 @@ spring.application.name: kafka-streams-playground
 spring.cloud.stream:
   function:
     definition: reverse;uppercase
+  kafka:
+    streams:
+      binder:
+        functions:
+          reverse:
+            applicationId: ${spring.application.name}.reverse
+          uppercase:
+            applicationId: ${spring.application.name}.uppercase
   bindings:
     reverse-in-0:
       destination: strings
     reverse-out-0:
       destination: strings-reverse
+
     uppercase-in-0:
       destination: strings-reverse
     uppercase-out-0:
       destination: strings-processed
+
+server:
+  port: 8080
